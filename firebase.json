@@ -1,1 +1,30 @@
-{"flutter":{"platforms":{"android":{"default":{"projectId":"foodies-3c1d9","appId":"1:275231286183:android:83e8f324846322a69d0c82","fileOutput":"android/app/google-services.json"}},"ios":{"default":{"projectId":"foodies-3c1d9","appId":"1:275231286183:ios:41db834ad07367999d0c82","uploadDebugSymbols":false,"fileOutput":"ios/Runner/GoogleService-Info.plist"}},"dart":{"lib/firebase_options.dart":{"projectId":"foodies-3c1d9","configurations":{"android":"1:275231286183:android:83e8f324846322a69d0c82","ios":"1:275231286183:ios:41db834ad07367999d0c82"}}}}}}
+{
+  "flutter": {
+    "platforms": {
+      "android": {
+        "default": {
+          "projectId": "thehalalfoods-e744e",
+          "appId": "1:779977527630:android:30945706f014bd401c8e1f",
+          "fileOutput": "android/app/google-services.json"
+        }
+      },
+      "ios": {
+        "default": {
+          "projectId": "thehalalfoods-e744e",
+          "appId": "1:779977527630:ios:879efe44aa45f24d1c8e1f",
+          "uploadDebugSymbols": false,
+          "fileOutput": "ios/Runner/GoogleService-Info.plist"
+        }
+      },
+      "dart": {
+        "lib/firebase_options.dart": {
+          "projectId": "thehalalfoods-e744e",
+          "configurations": {
+            "android": "1:779977527630:android:30945706f014bd401c8e1f",
+            "ios": "1:779977527630:ios:879efe44aa45f24d1c8e1f"
+          }
+        }
+      }
+    }
+  }
+}

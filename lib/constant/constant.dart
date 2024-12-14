@@ -37,7 +37,7 @@ class Constant {
   static LocationData? locationDataFinal;
 
   static UserModel? userModel;
-  static const globalUrl = "Replace Your website";
+  static const globalUrl = "https://thehalalfoods.co.uk";
 
   static bool singleOrderReceive = false;
   static String driverLocationUpdate = '50';

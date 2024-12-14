@@ -14,7 +14,7 @@
     <uses-permission android:name="android.permission.FOREGROUND_SERVICE_LOCATION" />
 
     <application
-        android:label="driver"
+        android:label="THF Driver"
         android:name="${applicationName}"
         android:icon="@mipmap/ic_launcher"
         tools:replace="android:label"
@@ -51,7 +51,7 @@
 
         <meta-data
             android:name="com.google.android.geo.API_KEY"
-            android:value="YOUR_API_KEY_HERE" />
+            android:value="AIzaSyCEzYaWe1SjNqFTBlGWQD7oVCv3tfK7VaY" />
 
         <meta-data
             android:name="com.google.android.gms.wallet.api.enabled"

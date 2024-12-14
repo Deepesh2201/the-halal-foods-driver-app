@@ -50,23 +50,25 @@ class DefaultFirebaseOptions {
   }
 
   static const FirebaseOptions android = FirebaseOptions(
-    apiKey: 'YOUR_ANDROID_API_KEY',
-    appId: 'YOUR_ANDROID_APP_ID',
-    messagingSenderId: 'YOUR_ANDROID_MESSAGING_SENDER_ID',
-    projectId: 'YOUR_ANDROID_PROJECT_ID',
-    databaseURL: 'YOUR_ANDROID_DATABASE_URL',
-    storageBucket: 'YOUR_ANDROID_STORAGE_BUCKET',
+    apiKey: 'AIzaSyAw278g3ENJSTu_951f9l-PzSu6lMIARzI',
+    appId: '1:779977527630:android:30945706f014bd401c8e1f',
+    messagingSenderId: '779977527630',
+    projectId: 'thehalalfoods-e744e',
+    databaseURL: 'https://thehalalfoods-e744e-default-rtdb.firebaseio.com',
+    storageBucket: 'thehalalfoods-e744e.appspot.com',
   );
 
   static const FirebaseOptions ios = FirebaseOptions(
-    apiKey: 'YOUR_IOS_API_KEY',
-    appId: 'YOUR_IOS_APP_ID',
-    messagingSenderId: 'YOUR_IOS_MESSAGING_SENDER_ID',
-    projectId: 'YOUR_IOS_PROJECT_ID',
-    databaseURL: 'YOUR_IOS_DATABASE_URL',
-    storageBucket: 'YOUR_IOS_STORAGE_BUCKET',
-    androidClientId: 'YOUR_ANDROID_CLIENT_ID',
-    iosClientId: 'YOUR_IOS_CLIENT_ID',
-    iosBundleId: 'YOUR_IOS_BUNDLE_ID',
+    apiKey: 'AIzaSyBEx_S-pGCNl5yEeDPbJFtDNlxCSFtbTX8',
+    appId: '1:779977527630:ios:879efe44aa45f24d1c8e1f',
+    messagingSenderId: '779977527630',
+    projectId: 'thehalalfoods-e744e',
+    databaseURL: 'https://thehalalfoods-e744e-default-rtdb.firebaseio.com',
+    storageBucket: 'thehalalfoods-e744e.appspot.com',
+    androidClientId:
+        '779977527630-9b15guu015cn97ob3g15v9a50qflulrr.apps.googleusercontent.com',
+    iosClientId:
+        '779977527630-7nkdccfloij5nee19g04sh31hfh6k2q2.apps.googleusercontent.com',
+    iosBundleId: 'com.nexteck.thfdriver.ios',
   );
 }

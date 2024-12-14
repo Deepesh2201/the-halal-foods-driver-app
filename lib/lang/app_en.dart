@@ -4,20 +4,25 @@ const Map<String, String> enUS = {
   "Please enter valid password": "Please enter valid password",
   "Log in": "Log in",
   "Verify Your Mobile Number": "Verify Your Mobile Number",
-  "Enter the OTP sent to your mobile number to verify and secure your account.": "Enter the OTP sent to your mobile number to verify and secure your account.",
+  "Enter the OTP sent to your mobile number to verify and secure your account.":
+      "Enter the OTP sent to your mobile number to verify and secure your account.",
   "Did’t receive any code? ": "Did’t receive any code? ",
   "Send Again": "Send Again",
   "Already Have an account?": "Already Have an account?",
   "Verify otp": "Verify otp",
-  "This user is disable please contact to administrator": "This user is disable please contact to administrator",
-  "Account already created in other application. You are not able login this application.": "Account already created in other application. You are not able login this application.",
+  "This user is disable please contact to administrator":
+      "This user is disable please contact to administrator",
+  "Account already created in other application. You are not able login this application.":
+      "Account already created in other application. You are not able login this application.",
   "Invalid Code": "Invalid Code",
   "Enter Valid otp": "Enter Valid otp",
   "Send Code": "Send Code",
   "Log In Using Your Mobile Number": "Log In Using Your Mobile Number",
-  "Enter your mobile number to quickly access your account and start managing your deliveries.": "Enter your mobile number to quickly access your account and start managing your deliveries.",
+  "Enter your mobile number to quickly access your account and start managing your deliveries.":
+      "Enter your mobile number to quickly access your account and start managing your deliveries.",
   "E-mail": "E-mail",
-  "Sign up now to start your journey as a Foodie driver and begin earning with every delivery.": "Sign up now to start your journey as a Foodie driver and begin earning with every delivery.",
+  "Sign up now to start your journey as a THF driver and begin earning with every delivery.":
+      "Sign up now to start your journey as a THF driver and begin earning with every delivery.",
   "First Name": "First Name",
   "Enter First Name": "Enter First Name",
   "Last Name": "Last Name",
@@ -27,7 +32,8 @@ const Map<String, String> enUS = {
   "Enter Confirm Password": "Enter Confirm Password",
   "Please enter first name": "Please enter first name",
   "Please enter last name": "Please enter last name",
-  "Password and Confirm password doesn't match": "Password and Confirm password doesn't match",
+  "Password and Confirm password doesn't match":
+      "Password and Confirm password doesn't match",
   "Please enter password": "Please enter password",
   "Please enter Confirm password": "Please enter Confirm password",
   "No Conversion found": "No Conversion found",
@@ -47,7 +53,8 @@ const Map<String, String> enUS = {
   "token": "token",
   "chatType": "chatType",
   "Welcome Back 👋": "Welcome Back 👋",
-  "Document verification is pending. Please proceed to set up your document verification.": "Document verification is pending. Please proceed to set up your document verification.",
+  "Document verification is pending. Please proceed to set up your document verification.":
+      "Document verification is pending. Please proceed to set up your document verification.",
   "Available Status": ":Available Status",
   "About App": "About App",
   "Home": "Home",
@@ -65,14 +72,17 @@ const Map<String, String> enUS = {
   "Legal": "Legal",
   "Terms and Conditions": "Terms and Conditions",
   "Log out": "Log out",
-  "Are you sure you want to log out? You will need to enter your credentials to log back in.": "Are you sure you want to log out? You will need to enter your credentials to log back in.",
-  "Are you sure you want to delete your account? This action is irreversible and will permanently remove all your data.": "Are you sure you want to delete your account? This action is irreversible and will permanently remove all your data.",
+  "Are you sure you want to log out? You will need to enter your credentials to log back in.":
+      "Are you sure you want to log out? You will need to enter your credentials to log back in.",
+  "Are you sure you want to delete your account? This action is irreversible and will permanently remove all your data.":
+      "Are you sure you want to delete your account? This action is irreversible and will permanently remove all your data.",
   "Account deleted successfully": "Account deleted successfully",
   "Contact Administrator": "Contact Administrator",
   "V": "V",
   "Edit Profile": "Edit Profile",
   "please select": "please select",
-  "No worries!! We’ll send you reset instructions": "No worries!! We’ll send you reset instructions",
+  "No worries!! We’ll send you reset instructions":
+      "No worries!! We’ll send you reset instructions",
   "Deliver to the": "Deliver to the",
   "Variants": "Variants",
   "Addons": "Addons",
@@ -80,9 +90,11 @@ const Map<String, String> enUS = {
   "Conform Deliver order": "Conform Deliver order",
   "Make Order Delivered": "Make Order Delivered",
   "Document Verification in Pending": "Document Verification in Pending",
-  "Your documents are being reviewed. We will notify you once the verification is complete.": "Your documents are being reviewed. We will notify you once the verification is complete.",
+  "Your documents are being reviewed. We will notify you once the verification is complete.":
+      "Your documents are being reviewed. We will notify you once the verification is complete.",
   "View Status": "View Status",
-  "You have to minimum wallet amount to receiving Order": "You have to minimum wallet amount to receiving Order",
+  "You have to minimum wallet amount to receiving Order":
+      "You have to minimum wallet amount to receiving Order",
   "New": "New",
   "Active": "Active",
   "Trip Distance": "Trip Distance",
@@ -102,13 +114,15 @@ const Map<String, String> enUS = {
   "MapsWithMe Map": "MapsWithMe Map",
   "yandexNavi": "yandexNavi",
   "VandexNavi Map": "VandexNavi Map",
-  "Easily find your destination with a single tap redirect to for seamless navigation.": "Easily find your destination with a single tap redirect to for seamless navigation.",
+  "Easily find your destination with a single tap redirect to for seamless navigation.":
+      "Easily find your destination with a single tap redirect to for seamless navigation.",
   "Payment Type": "Payment Type",
   "Collect Payment from customer": "Collect Payment from customer",
   "Reached Store for Pickup": "Reached Store for Pickup",
   "Reached the Customers Door Steps": "Reached the Customers Door Steps",
   "Order Ready to pickup": "Order Ready to pickup",
-  "Your order has been ready pickup the order and deliver to the customer’s locations.": "Your order has been ready pickup the order and deliver to the customer’s locations.",
+  "Your order has been ready pickup the order and deliver to the customer’s locations.":
+      "Your order has been ready pickup the order and deliver to the customer’s locations.",
   "Item and Deliver to the": "Item and Deliver to the",
   "x": "x",
   "Confirm Pickup": "Confirm Pickup",
@@ -127,7 +141,8 @@ const Map<String, String> enUS = {
   "Status": "Status",
   "Date": "Date",
   "Upload for Verification": "Upload for Verification",
-  "Please upload a valid to verify your identity complete the registration process.": "Please upload a valid to verify your identity complete the registration process.",
+  "Please upload a valid to verify your identity complete the registration process.":
+      "Please upload a valid to verify your identity complete the registration process.",
   "Front Side of ": "Front Side of ",
   "Choose a image and upload here": "Choose a image and upload here",
   "JPEG, PNG": "JPEG, PNG",
@@ -135,12 +150,15 @@ const Map<String, String> enUS = {
   "Back side of": "Back side of",
   "approved": "approved",
   "uploaded": "uploaded",
-  "Please upload front side of document.": "Please upload front side of document.",
-  "Please upload back side of document.": "Please upload back side of document.",
+  "Please upload front side of document.":
+      "Please upload front side of document.",
+  "Please upload back side of document.":
+      "Please upload back side of document.",
   "Upload Document": "Upload Document",
   "Please Select": "Please Select",
   "Gallery": "Gallery",
-  "Upload your ID Proof to complete the verification process and ensure compliance.": "Upload your ID Proof to complete the verification process and ensure compliance.",
+  "Upload your ID Proof to complete the verification process and ensure compliance.":
+      "Upload your ID Proof to complete the verification process and ensure compliance.",
   "Front": "Front",
   "And Back": "And Back",
   "Photo": "Photo",
@@ -163,7 +181,8 @@ const Map<String, String> enUS = {
   "PayPal": "PayPal",
   "RazorPay": "RazorPay",
   "Stripe": "Stripe",
-  "Withdraw amount must be greater or equal to": "Withdraw amount must be greater or equal to",
+  "Withdraw amount must be greater or equal to":
+      "Withdraw amount must be greater or equal to",
   "Pending": "Pending",
   "bank": "bank",
   "Success": "Success",
@@ -180,10 +199,12 @@ const Map<String, String> enUS = {
   "Paypal Email": "Paypal Email",
   "Please enter Paypal email": "Please enter Paypal email",
   "Razorpay account Id": "Razorpay account Id",
-  "Add your Account ID. For example, acc_GLGeLkU2JUeyDZ": "Add your Account ID. For example, acc_GLGeLkU2JUeyDZ",
+  "Add your Account ID. For example, acc_GLGeLkU2JUeyDZ":
+      "Add your Account ID. For example, acc_GLGeLkU2JUeyDZ",
   "Please enter RazorPay account Id": "Please enter RazorPay account Id",
   "Stripe Account Id": "Stripe Account Id",
-  "Go to your Stripe account settings > Account details > Copy your account ID on the right-hand side. For example, acc_GLGeLkU2JUeyDZ": "Go to your Stripe account settings > Account details > Copy your account ID on the right-hand side. For example, acc_GLGeLkU2JUeyDZ",
-  "Welcome to Foodie Driver": "Welcome to Foodie Driver",
+  "Go to your Stripe account settings > Account details > Copy your account ID on the right-hand side. For example, acc_GLGeLkU2JUeyDZ":
+      "Go to your Stripe account settings > Account details > Copy your account ID on the right-hand side. For example, acc_GLGeLkU2JUeyDZ",
+  "Welcome to THF Driver": "Welcome to THF Driver",
   "Your Favorite Food Delivered Fast!": "Your Favorite Food Delivered Fast!",
 };

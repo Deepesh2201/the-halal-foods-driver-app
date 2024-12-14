@@ -24,7 +24,7 @@ class SplashScreen extends StatelessWidget {
                 Image.asset("assets/images/ic_logo.png"),
                 const SizedBox(height: 10,),
                 Text(
-                  "Welcome to Foodie Driver".tr,
+                  "Welcome to THF Driver",
                   style: TextStyle(color: themeChange.getThem() ? AppThemeData.grey50 : AppThemeData.grey50, fontSize: 28, fontFamily: AppThemeData.bold),
                 ),
                 Text(

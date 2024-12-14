@@ -1,19 +1,91 @@
 {
   "project_info": {
-    "project_number": "YOUR_PROJECT_NUMBER",
-    "firebase_url": "https://YOUR_PROJECT_ID.firebaseio.com",
-    "project_id": "YOUR_PROJECT_ID",
-    "storage_bucket": "YOUR_PROJECT_ID.appspot.com"
+    "project_number": "779977527630",
+    "firebase_url": "https://thehalalfoods-e744e-default-rtdb.firebaseio.com",
+    "project_id": "thehalalfoods-e744e",
+    "storage_bucket": "thehalalfoods-e744e.appspot.com"
   },
-  "api_key": [
+  "client": [
     {
-      "current_key": "YOUR_FIREBASE_API_KEY"
+      "client_info": {
+        "mobilesdk_app_id": "1:779977527630:android:a250f3f428644cc51c8e1f",
+        "android_client_info": {
+          "package_name": "com.nexteck.thfcustomer.android"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "779977527630-9b15guu015cn97ob3g15v9a50qflulrr.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.nexteck.thfcustomer.android",
+            "certificate_hash": "7d3d6931a3acb85af0a76ecf3a1aa6caaa2372e5"
+          }
+        },
+        {
+          "client_id": "779977527630-4heagk0mic3532dsvciom1ou8ep7b923.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAw278g3ENJSTu_951f9l-PzSu6lMIARzI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "779977527630-4heagk0mic3532dsvciom1ou8ep7b923.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "779977527630-7nkdccfloij5nee19g04sh31hfh6k2q2.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.nexteck.thfdriver.ios"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:779977527630:android:30945706f014bd401c8e1f",
+        "android_client_info": {
+          "package_name": "com.nexteck.thfdriver.android"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "779977527630-4heagk0mic3532dsvciom1ou8ep7b923.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAw278g3ENJSTu_951f9l-PzSu6lMIARzI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "779977527630-4heagk0mic3532dsvciom1ou8ep7b923.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "779977527630-7nkdccfloij5nee19g04sh31hfh6k2q2.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.nexteck.thfdriver.ios"
+              }
+            }
+          ]
+        }
+      }
     }
   ],
-  "services": {
-    "appinvite_service": {
-      "other_platform_oauth_client": []
-    }
-  },
   "configuration_version": "1"
 }
