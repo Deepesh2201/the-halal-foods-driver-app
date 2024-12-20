@@ -65,7 +65,7 @@
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
 	<key>NSCameraUsageDescription</key>
-	<string>This app needs access to camera permission to upload images from gallery</string>
+	<string>This app needs access to camera permission to upload images &amp; after delivery images using camera. This permission will help when you need to click and upload the images.</string>
 	<key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
 	<string>This app needs access to location when open and in the background to provide nearest orders.</string>
 	<key>NSLocationAlwaysUsageDescription</key>
@@ -73,7 +73,7 @@
 	<key>NSLocationWhenInUseUsageDescription</key>
 	<string>This app needs access to location when open  to provide nearest orders.</string>
 	<key>NSMicrophoneUsageDescription</key>
-	<string>Used to capture audio for image picker plugin</string>
+	<string>Used to capture audio for image picker plugin. It is needed to record your messages after delivery in case of customer is not available or any issues, also need this permission to make calls.</string>
 	<key>NSPhotoLibraryUsageDescription</key>
 	<string>This app needs access to your gallery photo to upload images from gallery.</string>
 	<key>UIApplicationSupportsIndirectInputEvents</key>
