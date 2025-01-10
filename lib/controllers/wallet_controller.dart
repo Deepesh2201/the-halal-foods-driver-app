@@ -23,20 +23,13 @@ import 'package:driver/payment/xenditModel.dart';
 import 'package:driver/payment/xenditScreen.dart';
 import 'package:driver/themes/app_them_data.dart';
 import 'package:flutter/services.dart';
-import 'package:flutter_paypal_native/flutter_paypal_native.dart';
-import 'package:flutter_paypal_native/models/custom/currency_code.dart';
-import 'package:flutter_paypal_native/models/custom/environment.dart';
-import 'package:flutter_paypal_native/models/custom/order_callback.dart';
-import 'package:flutter_paypal_native/models/custom/purchase_unit.dart';
-import 'package:flutter_paypal_native/models/custom/user_action.dart';
-import 'package:flutter_paypal_native/str_helper.dart';
+
 import 'package:razorpay_flutter/razorpay_flutter.dart';
 
 import 'package:driver/models/payment_model/flutter_wave_model.dart';
 import 'package:driver/models/payment_model/mercado_pago_model.dart';
 import 'package:driver/models/payment_model/pay_fast_model.dart';
 import 'package:driver/models/payment_model/pay_stack_model.dart';
-import 'package:driver/models/payment_model/paypal_model.dart';
 import 'package:driver/models/payment_model/paytm_model.dart';
 import 'package:driver/models/payment_model/razorpay_model.dart';
 import 'package:driver/models/payment_model/stripe_model.dart';
@@ -91,7 +84,6 @@ class WalletController extends GetxController {
 
   Rx<PayFastModel> payFastModel = PayFastModel().obs;
   Rx<MercadoPagoModel> mercadoPagoModel = MercadoPagoModel().obs;
-  Rx<PayPalModel> payPalModel = PayPalModel().obs;
   Rx<StripeModel> stripeModel = StripeModel().obs;
   Rx<FlutterWaveModel> flutterWaveModel = FlutterWaveModel().obs;
   Rx<PayStackModel> payStackModel = PayStackModel().obs;
@@ -109,8 +101,7 @@ class WalletController extends GetxController {
             jsonDecode(Preferences.getString(Preferences.payFastSettings)));
         mercadoPagoModel.value = MercadoPagoModel.fromJson(
             jsonDecode(Preferences.getString(Preferences.mercadoPago)));
-        payPalModel.value = PayPalModel.fromJson(
-            jsonDecode(Preferences.getString(Preferences.paypalSettings)));
+
         stripeModel.value = StripeModel.fromJson(
             jsonDecode(Preferences.getString(Preferences.stripeSettings)));
         flutterWaveModel.value = FlutterWaveModel.fromJson(
@@ -235,42 +226,8 @@ class WalletController extends GetxController {
       }
     });
 
-    await FireStoreUtils.fireStore
-        .collection(CollectionName.settings)
-        .doc("paypalSettings")
-        .get()
-        .then((paypalData) {
-      try {
-        payPalModel.value = PayPalModel.fromJson(paypalData.data() ?? {});
-      } catch (error) {
-        debugPrint(error.toString());
-      }
-    });
 
-    await FireStoreUtils.fireStore
-        .collection(CollectionName.settings)
-        .doc("stripeSettings")
-        .get()
-        .then((paypalData) {
-      try {
-        stripeModel.value = StripeModel.fromJson(paypalData.data() ?? {});
-      } catch (error) {
-        debugPrint(error.toString());
-      }
-    });
 
-    await FireStoreUtils.fireStore
-        .collection(CollectionName.settings)
-        .doc("flutterWave")
-        .get()
-        .then((paypalData) {
-      try {
-        flutterWaveModel.value =
-            FlutterWaveModel.fromJson(paypalData.data() ?? {});
-      } catch (error) {
-        debugPrint(error.toString());
-      }
-    });
 
     await FireStoreUtils.getWithdrawMethod().then(
       (value) {
@@ -307,75 +264,6 @@ class WalletController extends GetxController {
     });
 
     ShowToastDialog.showToast("Amount Top-up successfully");
-  }
-
-  final _flutterPaypalNativePlugin = FlutterPaypalNative.instance;
-
-  void initPayPal() async {
-    //set debugMode for error logging
-    FlutterPaypalNative.isDebugMode =
-        paytmModel.value.isSandboxEnabled == true ? true : false;
-
-    //initiate payPal plugin
-    await _flutterPaypalNativePlugin.init(
-      //your app id !!! No Underscore!!! see readme.md for help
-      returnUrl: "com.parkme://paypalpay",
-      //client id from developer dashboard
-      clientID: payPalModel.value.paypalClient.toString(),
-      //sandbox, staging, live etc
-      payPalEnvironment: payPalModel.value.isLive == false
-          ? FPayPalEnvironment.sandbox
-          : FPayPalEnvironment.live,
-      //what currency do you plan to use? default is US dollars
-      currencyCode: FPayPalCurrencyCode.usd,
-      //action paynow?
-      action: FPayPalUserAction.payNow,
-    );
-
-    //call backs for payment
-    _flutterPaypalNativePlugin.setPayPalOrderCallback(
-      callback: FPayPalOrderCallback(
-        onCancel: () {
-          //user canceled the payment
-          ShowToastDialog.showToast("Payment canceled");
-        },
-        onSuccess: (data) {
-          //successfully paid
-          //remove all items from queue
-          // _flutterPaypalNativePlugin.removeAllPurchaseItems();
-          ShowToastDialog.showToast("Payment Successful!!");
-          walletTopUp();
-        },
-        onError: (data) {
-          //an error occured
-          ShowToastDialog.showToast("error: ${data.reason}");
-        },
-        onShippingChange: (data) {
-          //the user updated the shipping address
-          ShowToastDialog.showToast(
-              "shipping change: ${data.shippingChangeAddress?.adminArea1 ?? ""}");
-        },
-      ),
-    );
-  }
-
-  paypalPaymentSheet(String amount) {
-    //add 1 item to cart. Max is 4!
-    if (_flutterPaypalNativePlugin.canAddMorePurchaseUnit) {
-      _flutterPaypalNativePlugin.addPurchaseUnit(
-        FPayPalPurchaseUnit(
-          // random prices
-          amount: double.parse(amount),
-
-          ///please use your own algorithm for referenceId. Maybe ProductID?
-          referenceId: FPayPalStrHelper.getRandomString(16),
-        ),
-      );
-    }
-    // initPayPal();
-    _flutterPaypalNativePlugin.makeOrder(
-      action: FPayPalUserAction.payNow,
-    );
   }
 
   // Strip

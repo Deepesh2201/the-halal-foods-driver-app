@@ -178,7 +178,6 @@ const Map<String, String> enUS = {
   "Select Withdraw Method": "Select Withdraw Method",
   "Bank Transfer": "Bank Transfer",
   "Flutter wave": "Flutter wave",
-  "PayPal": "PayPal",
   "RazorPay": "RazorPay",
   "Stripe": "Stripe",
   "Withdraw amount must be greater or equal to":
@@ -196,8 +195,6 @@ const Map<String, String> enUS = {
   "Payment Method remove successfully": "Payment Method remove successfully",
   "Please enter account Number": "Please enter account Number",
   "Please enter bank code": "Please enter bank code",
-  "Paypal Email": "Paypal Email",
-  "Please enter Paypal email": "Please enter Paypal email",
   "Razorpay account Id": "Razorpay account Id",
   "Add your Account ID. For example, acc_GLGeLkU2JUeyDZ":
       "Add your Account ID. For example, acc_GLGeLkU2JUeyDZ",

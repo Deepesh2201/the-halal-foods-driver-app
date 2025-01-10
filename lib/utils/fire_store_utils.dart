@@ -23,7 +23,6 @@ import 'package:driver/models/payment_model/mid_trans.dart';
 import 'package:driver/models/payment_model/orange_money.dart';
 import 'package:driver/models/payment_model/pay_fast_model.dart';
 import 'package:driver/models/payment_model/pay_stack_model.dart';
-import 'package:driver/models/payment_model/paypal_model.dart';
 import 'package:driver/models/payment_model/paytm_model.dart';
 import 'package:driver/models/payment_model/razorpay_model.dart';
 import 'package:driver/models/payment_model/stripe_model.dart';
@@ -270,12 +269,7 @@ class FireStoreUtils {
         await Preferences.setString(Preferences.mercadoPago, jsonEncode(mercadoPagoModel.toJson()));
       }
     });
-    await fireStore.collection(CollectionName.settings).doc("paypalSettings").get().then((value) async {
-      if (value.exists) {
-        PayPalModel payPalModel = PayPalModel.fromJson(value.data()!);
-        await Preferences.setString(Preferences.paypalSettings, jsonEncode(payPalModel.toJson()));
-      }
-    });
+
     await fireStore.collection(CollectionName.settings).doc("stripeSettings").get().then((value) async {
       if (value.exists) {
         StripeModel stripeModel = StripeModel.fromJson(value.data()!);

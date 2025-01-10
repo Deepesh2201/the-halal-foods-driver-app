@@ -2,11 +2,10 @@ class WithdrawMethodModel {
   String? id;
   String? userId;
   FlutterWave? flutterWave;
-  Paypal? paypal;
   RazorpayModel? razorpay;
   Stripe? stripe;
 
-  WithdrawMethodModel({this.id, this.userId, this.flutterWave, this.stripe, this.razorpay, this.paypal});
+  WithdrawMethodModel({this.id, this.userId, this.flutterWave, this.stripe, this.razorpay});
 
   WithdrawMethodModel.fromJson(Map<String, dynamic> json) {
     id = json['id'] ?? "";
@@ -14,7 +13,6 @@ class WithdrawMethodModel {
     flutterWave = json['flutterwave'] != null ? FlutterWave.fromJson(json['flutterwave']) : null;
     stripe = json['stripe'] != null ? Stripe.fromJson(json['stripe']) : null;
     razorpay = json['razorpay'] != null ? RazorpayModel.fromJson(json['razorpay']) : null;
-    paypal = json['paypal'] != null ? Paypal.fromJson(json['paypal']) : null;
   }
 
   Map<String, dynamic> toJson() {
@@ -26,9 +24,6 @@ class WithdrawMethodModel {
     }
     if (razorpay != null) {
       data['razorpay'] = razorpay!.toJson();
-    }
-    if (paypal != null) {
-      data['paypal'] = paypal!.toJson();
     }
     if (stripe != null) {
       data['stripe'] = stripe!.toJson();
@@ -100,22 +95,3 @@ class RazorpayModel {
   }
 }
 
-class Paypal {
-  String? name;
-  String? email;
-
-  Paypal({this.name, this.email});
-
-  Paypal.fromJson(Map<String, dynamic> json) {
-    name = json['name'] ?? "PayPal";
-    email = json['email'];
-
-  }
-
-  Map<String, dynamic> toJson() {
-    final Map<String, dynamic> data = <String, dynamic>{};
-    data['name'] = name;
-    data['email'] = email;
-    return data;
-  }
-}

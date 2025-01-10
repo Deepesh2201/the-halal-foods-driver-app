@@ -494,52 +494,7 @@ class WalletScreen extends StatelessWidget {
                                     const SizedBox(
                                       height: 10,
                                     ),
-                                    controller.withdrawMethodModel.value.paypal == null || (controller.payPalModel.value.isWithdrawEnabled == false)
-                                        ? const SizedBox()
-                                        : InkWell(
-                                            onTap: () {
-                                              controller.selectedValue.value = 2;
-                                            },
-                                            child: Row(
-                                              children: [
-                                                Container(
-                                                  width: 50,
-                                                  height: 50,
-                                                  decoration: ShapeDecoration(
-                                                    shape: RoundedRectangleBorder(
-                                                      side: BorderSide(width: 1, color: themeChange.getThem() ? AppThemeData.grey700 : AppThemeData.grey200),
-                                                      borderRadius: BorderRadius.circular(8),
-                                                    ),
-                                                  ),
-                                                  child: Padding(
-                                                    padding: const EdgeInsets.all(10),
-                                                    child: Image.asset("assets/images/paypal.png"),
-                                                  ),
-                                                ),
-                                                const SizedBox(
-                                                  width: 10,
-                                                ),
-                                                Expanded(
-                                                  child: Text(
-                                                    "PayPal".tr,
-                                                    style: TextStyle(
-                                                        color: themeChange.getThem() ? AppThemeData.grey50 : AppThemeData.grey900, fontSize: 16, fontFamily: AppThemeData.medium),
-                                                  ),
-                                                ),
-                                                Radio(
-                                                  value: 2,
-                                                  groupValue: controller.selectedValue.value,
-                                                  activeColor: AppThemeData.secondary300,
-                                                  onChanged: (value) {
-                                                    controller.selectedValue.value = value!;
-                                                  },
-                                                ),
-                                              ],
-                                            ),
-                                          ),
-                                    const SizedBox(
-                                      height: 10,
-                                    ),
+
                                     controller.withdrawMethodModel.value.razorpay == null || (controller.razorPayModel.value.isWithdrawEnabled == false)
                                         ? const SizedBox()
                                         : InkWell(
@@ -666,7 +621,7 @@ class WalletScreen extends StatelessWidget {
                                     : controller.selectedValue.value == 1
                                         ? "flutterwave"
                                         : controller.selectedValue.value == 2
-                                            ? "paypal"
+                                            ? ""
                                             : controller.selectedValue.value == 3
                                                 ? "razorpay"
                                                 : "stripe",

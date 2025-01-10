@@ -301,124 +301,20 @@ class WithdrawMethodSetupScreen extends StatelessWidget {
                                             borderRadius: BorderRadius.circular(8),
                                           ),
                                         ),
-                                        child: Padding(
-                                          padding: const EdgeInsets.all(10),
-                                          child: Image.asset("assets/images/paypal.png"),
-                                        ),
+
                                       ),
                                       const SizedBox(
                                         width: 10,
                                       ),
-                                      Expanded(
-                                        child: Text(
-                                          "PayPal".tr,
-                                          style: TextStyle(color: themeChange.getThem() ? AppThemeData.grey50 : AppThemeData.grey900, fontSize: 16, fontFamily: AppThemeData.medium),
-                                        ),
-                                      ),
-                                      controller.withdrawMethodModel.value.paypal != null
-                                          ? Row(
-                                              children: [
-                                                InkWell(
-                                                  onTap: () {
-                                                    showDialog(
-                                                      context: context,
-                                                      builder: (BuildContext context) {
-                                                        return payPalDialog(controller, themeChange);
-                                                      },
-                                                    );
-                                                  },
-                                                  child: Container(
-                                                    decoration: ShapeDecoration(
-                                                      shape: RoundedRectangleBorder(
-                                                        side: BorderSide(width: 1, color: themeChange.getThem() ? AppThemeData.grey800 : AppThemeData.grey100),
-                                                        borderRadius: BorderRadius.circular(120),
-                                                      ),
-                                                    ),
-                                                    child: Padding(
-                                                      padding: const EdgeInsets.all(8.0),
-                                                      child: SvgPicture.asset("assets/icons/ic_edit_coupon.svg"),
-                                                    ),
-                                                  ),
-                                                ),
-                                                const SizedBox(
-                                                  width: 10,
-                                                ),
-                                                InkWell(
-                                                  onTap: () async {
-                                                    controller.withdrawMethodModel.value.paypal = null;
-                                                    await FireStoreUtils.setWithdrawMethod(controller.withdrawMethodModel.value).then(
-                                                          (value) async {
-                                                        ShowToastDialog.showLoader("Please wait..");
 
-                                                        await controller.getPaymentMethod();
-                                                        ShowToastDialog.closeLoader();
-                                                        ShowToastDialog.showToast("Payment Method remove successfully");
-                                                      },
-                                                    );
-                                                  },
-                                                  child: Container(
-                                                    decoration: ShapeDecoration(
-                                                      shape: RoundedRectangleBorder(
-                                                        side: BorderSide(width: 1, color: themeChange.getThem() ? AppThemeData.grey800 : AppThemeData.grey100),
-                                                        borderRadius: BorderRadius.circular(120),
-                                                      ),
-                                                    ),
-                                                    child: Padding(
-                                                      padding: const EdgeInsets.all(8.0),
-                                                      child: SvgPicture.asset("assets/icons/ic_delete-one.svg"),
-                                                    ),
-                                                  ),
-                                                )
-                                              ],
-                                            )
-                                          : const SizedBox()
+
                                     ],
                                   ),
                                   Padding(
                                     padding: const EdgeInsets.symmetric(vertical: 10),
                                     child: MySeparator(color: themeChange.getThem() ? AppThemeData.grey700 : AppThemeData.grey200),
                                   ),
-                                  controller.withdrawMethodModel.value.paypal == null
-                                      ? Row(
-                                          children: [
-                                            Text(
-                                              "Your Setup is pending".tr,
-                                              style:
-                                                  TextStyle(color: themeChange.getThem() ? AppThemeData.grey50 : AppThemeData.grey900, fontSize: 16, fontFamily: AppThemeData.medium),
-                                            ),
-                                            const SizedBox(
-                                              width: 10,
-                                            ),
-                                            InkWell(
-                                              onTap: () {
-                                                showDialog(
-                                                  context: context,
-                                                  builder: (BuildContext context) {
-                                                    return payPalDialog(controller, themeChange);
-                                                  },
-                                                );
-                                              },
-                                              child: Text(
-                                                "Setup now".tr,
-                                                style: TextStyle(
-                                                    decoration: TextDecoration.underline,
-                                                    decorationColor: AppThemeData.secondary300,
-                                                    color: themeChange.getThem() ? AppThemeData.secondary300 : AppThemeData.secondary300,
-                                                    fontSize: 16,
-                                                    fontFamily: AppThemeData.medium),
-                                              ),
-                                            ),
-                                          ],
-                                        )
-                                      : Row(
-                                          children: [
-                                            Text(
-                                              "Setup was done.".tr,
-                                              style: TextStyle(
-                                                  color: themeChange.getThem() ? AppThemeData.success400 : AppThemeData.success400, fontSize: 16, fontFamily: AppThemeData.medium),
-                                            ),
-                                          ],
-                                        )
+
                                 ],
                               ),
                             ),
@@ -768,60 +664,6 @@ class WithdrawMethodSetupScreen extends StatelessWidget {
                           FlutterWave(accountNumber: controller.accountNumberFlutterWave.value.text, bankCode: controller.bankCodeFlutterWave.value.text, name: "FlutterWave");
                     }
                     controller.withdrawMethodModel.value.flutterWave = flutterWave;
-                    await FireStoreUtils.setWithdrawMethod(controller.withdrawMethodModel.value).then(
-                          (value) async {
-                        ShowToastDialog.showLoader("Please wait..");
-
-                        await controller.getPaymentMethod();
-                        ShowToastDialog.closeLoader();
-                        ShowToastDialog.showToast("Payment Method save successfully");
-                        Get.back();
-                      },
-                    );
-                  }
-                },
-              ),
-            ],
-          ),
-        ),
-      ),
-    );
-  }
-
-  payPalDialog(WithdrawMethodSetupController controller, themeChange) {
-    return Dialog(
-      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(20)),
-      insetPadding: const EdgeInsets.all(10),
-      clipBehavior: Clip.antiAliasWithSaveLayer,
-      backgroundColor: themeChange.getThem() ? AppThemeData.surfaceDark : AppThemeData.surface,
-      child: Padding(
-        padding: const EdgeInsets.all(30),
-        child: SizedBox(
-          width: 500,
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            mainAxisSize: MainAxisSize.min,
-            children: [
-              TextFieldWidget(
-                title: 'Paypal Email'.tr,
-                controller: controller.emailPaypal.value,
-                hintText: 'Paypal Email'.tr,
-              ),
-              RoundedButtonFill(
-                title: "Save".tr,
-                color: AppThemeData.secondary300,
-                textColor: AppThemeData.grey50,
-                onPress: () async {
-                  if (controller.emailPaypal.value.text.isEmpty) {
-                    ShowToastDialog.showToast("Please enter Paypal email");
-                  } else {
-                    Paypal? payPal = controller.withdrawMethodModel.value.paypal;
-                    if (payPal != null) {
-                      payPal.email = controller.emailPaypal.value.text;
-                    } else {
-                      payPal = Paypal(email: controller.emailPaypal.value.text, name: "PayPal");
-                    }
-                    controller.withdrawMethodModel.value.paypal = payPal;
                     await FireStoreUtils.setWithdrawMethod(controller.withdrawMethodModel.value).then(
                           (value) async {
                         ShowToastDialog.showLoader("Please wait..");

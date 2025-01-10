@@ -46,7 +46,6 @@ class PayStackURLGen {
 
     return data["status"];
 
-    //PayPalClientSettleModel.fromJson(data);
   }
 
   static Future<String> getPayHTML({required String amount, required PayFastModel payFastSettingData, required UserModel userModel}) async {

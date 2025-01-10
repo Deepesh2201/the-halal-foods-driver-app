@@ -68,10 +68,7 @@ class PaymentListScreen extends StatelessWidget {
                          visible: controller.flutterWaveModel.value.isEnable == true,
                          child: cardDecoration(controller, PaymentGateway.stripe, themeChange, "assets/images/stripe.png"),
                        ),
-                       Visibility(
-                         visible: controller.paytmModel.value.isEnabled == true,
-                         child: cardDecoration(controller, PaymentGateway.paypal, themeChange, "assets/images/paypal.png"),
-                       ),
+
                        Visibility(
                          visible: controller.payStackModel.value.isEnable == true,
                          child: cardDecoration(controller, PaymentGateway.payStack, themeChange, "assets/images/paystack.png"),
@@ -130,8 +127,6 @@ class PaymentListScreen extends StatelessWidget {
                   if (double.parse(controller.topUpAmountController.value.text) >= double.parse(Constant.minimumAmountToDeposit.toString())) {
                     if (controller.selectedPaymentMethod.value == PaymentGateway.stripe.name) {
                       controller.stripeMakePayment(amount: controller.topUpAmountController.value.text);
-                    } else if (controller.selectedPaymentMethod.value == PaymentGateway.paypal.name) {
-                      controller.paypalPaymentSheet(controller.topUpAmountController.value.text);
                     } else if (controller.selectedPaymentMethod.value == PaymentGateway.payStack.name) {
                       controller.payStackPayment(controller.topUpAmountController.value.text);
                     } else if (controller.selectedPaymentMethod.value == PaymentGateway.mercadoPago.name) {
@@ -239,7 +234,6 @@ class PaymentListScreen extends StatelessWidget {
 enum PaymentGateway {
   payFast,
   mercadoPago,
-  paypal,
   stripe,
   flutterWave,
   payStack,

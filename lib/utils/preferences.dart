@@ -11,7 +11,6 @@ class Preferences {
 
   static const payFastSettings = "payFastSettings";
   static const mercadoPago = "MercadoPago";
-  static const paypalSettings = "paypalSettings";
   static const stripeSettings = "stripeSettings";
   static const flutterWave = "flutterWave";
   static const payStack = "payStack";
