@@ -257,15 +257,15 @@ class HomeScreen extends StatelessWidget {
                                   ),
                                 ),
                         ),
-                        showDriverBottomSheet(themeChange, controller),
-                        // controller.currentOrder.value.id != null &&
-                        //         controller.currentOrder.value.status == Constant.driverPending
-                        //     ? showDriverBottomSheet(themeChange, controller)
-                        //     : Container(),
-                        // controller.currentOrder.value.id != null &&
-                        //         controller.currentOrder.value.status != Constant.driverPending
-                        //     ? buildOrderActionsCard(themeChange, controller)
-                        //     : Container(),
+                        // showDriverBottomSheet(themeChange, controller),
+                        controller.currentOrder.value.id != null &&
+                                controller.currentOrder.value.status == Constant.driverPending
+                            ? showDriverBottomSheet(themeChange, controller)
+                            : Container(),
+                        controller.currentOrder.value.id != null &&
+                                controller.currentOrder.value.status != Constant.driverPending
+                            ? buildOrderActionsCard(themeChange, controller)
+                            : Container(),
                       ],
                     ),
         );

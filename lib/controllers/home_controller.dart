@@ -43,10 +43,7 @@ class HomeController extends GetxController {
 
   getArgument() {
     dynamic argumentData = Get.arguments;
-    if (argumentData == null) {
-      print('=============================');
-      print(argumentData);
-      print('=============================');
+    if (argumentData != null) {
       orderModel.value = argumentData['orderModel'];
     }
   }
@@ -176,6 +173,7 @@ class HomeController extends GetxController {
       destinationIcon = BitmapDescriptor.fromBytes(destination);
       taxiIcon = BitmapDescriptor.fromBytes(driver);
     } else {
+      print('=============================');
       departureOsmIcon = Image.asset("assets/images/location_black3x.png", width: 30, height: 30); //OSM
       destinationOsmIcon = Image.asset("assets/images/location_orange3x.png", width: 30, height: 30); //OSM
       driverOsmIcon = Image.asset("assets/images/food_delivery.png", width: 80, height: 80); //OSM

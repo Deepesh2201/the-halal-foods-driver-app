@@ -355,6 +355,7 @@ class FireStoreUtils {
     OrderModel? orderModel;
     try {
       await fireStore.collection(CollectionName.restaurantOrders).doc(orderId).get().then((value) {
+
         if (value.exists) {
           orderModel = OrderModel.fromJson(value.data()!);
         }
