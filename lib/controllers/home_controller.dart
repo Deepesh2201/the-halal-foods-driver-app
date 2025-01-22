@@ -23,12 +23,12 @@ class HomeController extends GetxController {
   @override
   void onInit() {
     // TODO: implement onInit
-    print(Constant.isDriverVerification);
-    print(Constant.userModel!.isDocumentVerify);
+
     if (Constant.selectedMapType == 'osm' ||
         (Constant.isDriverVerification == true && Constant.userModel!.isDocumentVerify == true)) {
       mapOsmController = MapController(
           initPosition: GeoPoint(latitude: 20.9153, longitude: -100.7439), useExternalTracking: false); //OSM
+
     }
     getArgument();
     setIcons();
@@ -43,7 +43,10 @@ class HomeController extends GetxController {
 
   getArgument() {
     dynamic argumentData = Get.arguments;
-    if (argumentData != null) {
+    if (argumentData == null) {
+      print('=============================');
+      print(argumentData);
+      print('=============================');
       orderModel.value = argumentData['orderModel'];
     }
   }

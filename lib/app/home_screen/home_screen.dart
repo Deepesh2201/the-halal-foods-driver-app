@@ -257,14 +257,15 @@ class HomeScreen extends StatelessWidget {
                                   ),
                                 ),
                         ),
-                        controller.currentOrder.value.id != null &&
-                                controller.currentOrder.value.status == Constant.driverPending
-                            ? showDriverBottomSheet(themeChange, controller)
-                            : Container(),
-                        controller.currentOrder.value.id != null &&
-                                controller.currentOrder.value.status != Constant.driverPending
-                            ? buildOrderActionsCard(themeChange, controller)
-                            : Container(),
+                        showDriverBottomSheet(themeChange, controller),
+                        // controller.currentOrder.value.id != null &&
+                        //         controller.currentOrder.value.status == Constant.driverPending
+                        //     ? showDriverBottomSheet(themeChange, controller)
+                        //     : Container(),
+                        // controller.currentOrder.value.id != null &&
+                        //         controller.currentOrder.value.status != Constant.driverPending
+                        //     ? buildOrderActionsCard(themeChange, controller)
+                        //     : Container(),
                       ],
                     ),
         );
@@ -273,12 +274,17 @@ class HomeScreen extends StatelessWidget {
   }
 
   showDriverBottomSheet(themeChange, HomeController controller) {
+    print('deepu raj -------------- ====');
+    print(controller.currentOrder.value.vendor?.latitude);
     double distanceInMeters = Geolocator.distanceBetween(
         controller.currentOrder.value.vendor!.latitude ?? 0.0,
         controller.currentOrder.value.vendor!.longitude ?? 0.0,
         controller.currentOrder.value.address!.location!.latitude ?? 0.0,
         controller.currentOrder.value.address!.location!.longitude ?? 0.0);
     double kilometer = distanceInMeters / 1000;
+    print('deepu raj --------------');
+    print(kilometer);
+    print('------------------------');
     return Padding(
       padding: const EdgeInsets.all(8.0),
       child: Container(

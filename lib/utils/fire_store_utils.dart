@@ -218,6 +218,7 @@ class FireStoreUtils {
       });
 
       await FirebaseFirestore.instance.collection(CollectionName.settings).doc("DriverNearBy").get().then((value) {
+
         Constant.minimumDepositToRideAccept = value.data()!['minimumDepositToRideAccept'];
         Constant.minimumAmountToWithdrawal = value.data()!['minimumAmountToWithdrawal'];
         Constant.driverLocationUpdate = value.data()!['driverLocationUpdate'];

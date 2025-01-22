@@ -97,7 +97,14 @@ class OrderModel {
     notes = json['notes'];
     author = json['author'] != null ? UserModel.fromJson(json['author']) : null;
     driver = json['driver'] != null ? UserModel.fromJson(json['driver']) : null;
-    takeAway = json['takeAway'];
+    // takeAway = json['takeAway'];
+    if (json['takeAway'] is String) {
+      takeAway = json['takeAway'].toLowerCase() == 'true'; // Convert "true"/"false" to boolean
+    } else if (json['takeAway'] is bool) {
+      takeAway = json['takeAway'];
+    } else {
+      takeAway = null; // Handle missing or invalid data
+    }
     rejectedByDrivers = json['rejectedByDrivers'] ?? [];
   }
 

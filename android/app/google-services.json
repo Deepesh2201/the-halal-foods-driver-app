@@ -85,6 +85,42 @@
           ]
         }
       }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:779977527630:android:f98dd2e694e4dfca1c8e1f",
+        "android_client_info": {
+          "package_name": "com.thf.restaurant.android"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "779977527630-4heagk0mic3532dsvciom1ou8ep7b923.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAw278g3ENJSTu_951f9l-PzSu6lMIARzI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "779977527630-4heagk0mic3532dsvciom1ou8ep7b923.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "779977527630-7nkdccfloij5nee19g04sh31hfh6k2q2.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.nexteck.thfdriver.ios"
+              }
+            }
+          ]
+        }
+      }
     }
   ],
   "configuration_version": "1"
